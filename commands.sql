@@ -68,8 +68,13 @@ WHERE region='Southern Europe'
 ORDER BY population
 ;
 
-SELECT countrycode, language, isofficial  FROM countrylanguages 
-;
+SELECT countrycode, language, isofficial FROM countrylanguages;
 
-SELECT countrycode, language, isofficial  FROM countrylanguages 
+SELECT countrycode, language, isofficial FROM countrylanguages 
+WHERE countrycode = 'VAT'
 ;
+-- Italian
+--  countrycode | language | isofficial 
+-- -------------+----------+------------
+--  VAT         | Italian  | t
+-- (1 row)
