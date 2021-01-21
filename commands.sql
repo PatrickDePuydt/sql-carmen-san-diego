@@ -192,3 +192,80 @@ SELECT name, code, continent, region, surfacearea FROM countries WHERE region='S
 --  Malta                           | MLT  | Europe    | Southern Europe |         316
 --  San Marino                      | SMR  | Europe    | Southern Europe |          61
 --  Holy See (Vatican Cities State) | VAT  | Europe    | Southern Europe |         0.4
+
+SELECT *  FROM cities 
+WHERE countrycode='ITA'
+ORDER BY name;
+
+SELECT *  FROM countrylanguages
+WHERE countrycode='ITA';
+
+SELECT *  FROM countrylanguages
+WHERE language='Italian'
+
+;
+
++---------------+------------+--------------+--------------+
+| countrycode   | language   | isofficial   | percentage   |
+|---------------+------------+--------------+--------------|
+| ITA           | Italian    | True         | 94.1         |
+| ITA           | Sardinian  | False        | 2.7          |
+| ITA           | Friuli     | False        | 1.2          |
+| ITA           | French     | False        | 0.5          |
+| ITA           | German     | False        | 0.5          |
+| ITA           | Albaniana  | False        | 0.2          |
+| ITA           | Slovene    | False        | 0.2          |
+| ITA           | Romani     | False        | 0.2          |
++---------------+------------+--------------+--SELECT *  FROM countrylanguages------------+
+
+
+SELECT *  FROM countrylanguages
+WHERE language='Italian' 
+AND WHERE isofficial='True';
+
+dreammachine@/tmp:world> SELECT *  FROM countrylanguages
+WHERE language='Italian' AND isofficial='True';
++---------------+------------+--------------+--------------+
+| countrycode   | language   | isofficial   | percentage   |
+|---------------+------------+--------------+--------------|
+| ITA           | Italian    | True         | 94.1         |
+| SMR           | Italian    | True         | 100.0        |
+| VAT           | Italian    | True         | 0.0          |
+| CHE           | Italian    | True         | 7.7          |
++---------------+------------+--------------+--------------+
+
+SELECT * FROM countries
+WHERE code='SMR';
+
++--------+------------+-------------+-----------------+---------------+-------------+--------------+------------------+--------+----------+-------------+------------------+---------------+-----------+---------+
+| code   | name       | continent   | region          | surfacearea   | indepyear   | population   | lifeexpectancy   | gnp    | gnpold   | localname   | governmentform   | headofstate   | capital   | code2   |
+|--------+------------+-------------+-----------------+---------------+-------------+--------------+------------------+--------+----------+-------------+------------------+---------------+-----------+---------|
+| SMR    | San Marino | Europe      | Southern Europe | 61.0          | 885         | 27000        | 81.1             | 510.00 | <null>   | San Marino  | Republic         | <null>        | 3171      | SM      |
++--------+------------+-------------+-----------------+---------------+-------------+--------------+------------------+--------+----------+-------------+------------------+---------------+-----------+---------+
+
+
+SELECT name, capital  FROM countries 
+WHERE region='South America';
+
+
+dreammachine@/tmp:world> SELECT name, capital  FROM countries
+ WHERE region='South America';
++------------------+-----------+
+| name             | capital   |
+|------------------+-----------|
+| Argentina        | 69        |
+| Bolivia          | 194       |
+| Brazil           | 211       |
+| Chile            | 554       |
+| Ecuador          | 594       |
+| Falkland Islands | 763       |
+| Guyana           | 928       |
+| Colombia         | 2257      |
+| Paraguay         | 2885      |
+| Peru             | 2890      |
+| French Guiana    | 3014      |
+| Suriname         | 3243      |
+| Uruguay          | 3492      |
+| Venezuela        | 3539      |
++------------------+-----------+
+
